@@ -5,7 +5,7 @@ Terraform module which creates Prometheus resources on TencentCloud
 
 ```hcl
 module "prometheus_instance" {
-  source = "terraform-tencentcloud-modules/vpn/tencentcloud"
+  source = "terraform-tencentcloud-modules/prometheus/tencentcloud"
 
   prometheus_instance_name = "prometheus_for_test"
   vpc_id                   = "vpc-xxxxx"
