@@ -24,7 +24,6 @@ locals {
   grafana_vpc_id        = tencentcloud_vpc.vpc.id
   grafana_subnet_ids    = [tencentcloud_subnet.subnet.id]
   grafana_init_password = 30
-  availability_zone     = "ap-guangzhou-3"
   enable_internet       = false
   is_destroy            = true
 

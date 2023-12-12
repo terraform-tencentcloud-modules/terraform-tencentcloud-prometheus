@@ -6,7 +6,7 @@ variable "create_grafana_instance" {
 }
 
 variable "prometheus_instance_id" {
-  description = "ID of Grafana instance."
+  description = "ID of Prometheus instance."
   type        = string
   default     = null
 }
