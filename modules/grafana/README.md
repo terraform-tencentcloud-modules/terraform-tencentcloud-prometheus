@@ -1,3 +1,33 @@
+# terraform-tencentcloud-grafana
+Terraform module which creates Grafana resources on TencentCloud
+
+## Usage
+
+```hcl
+module "grafana_instance" {
+  source = "terraform-tencentcloud-modules/prometheus/tencentcloud//modules/grafana"
+
+  grafana_instance_name = "grafana_for_test"
+  grafana_vpc_id        = ["vpc-xxxxx"]
+  grafana_subnet_ids    = ["subnet-xxxxx"]
+  grafana_init_password = "xxxxxx"
+  enable_internet       = true
+  is_destroy            = false
+
+  grafana_tags = {
+    "createby" = "terraform"
+  }
+  prometheus_instance_id = "prom-xxxxx"
+}
+```
+
+## Examples
+
+- [Simple](https://github.com/terraform-tencentcloud-modules/terraform-tencentcloud-prometheus/tree/master/examples/simple)
+- [Exist Prometheus](https://github.com/terraform-tencentcloud-modules/terraform-tencentcloud-prometheus/tree/master/examples/exist-prometheus)
+- [Complete](https://github.com/terraform-tencentcloud-modules/terraform-tencentcloud-prometheus/tree/master/examples/complete)
+
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
@@ -44,3 +74,12 @@ No modules.
 |------|-------------|
 | <a name="output_grafana_id"></a> [grafana\_id](#output\_grafana\_id) | The Id of Grafana Instance. |
 <!-- END_TF_DOCS -->
+
+## Authors
+
+Created and maintained by [TencentCloud](https://github.com/terraform-providers/terraform-provider-tencentcloud)
+
+## License
+
+Mozilla Public License Version 2.0.
+See LICENSE for full details.
